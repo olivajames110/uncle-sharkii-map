@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+}
+
+a {
+  color: #35517e;
+}
+
+.cities-list a {
+  text-decoration: underline;
+}
+
+.location-map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.location-map-container .map-title-wrapper {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+.location-map-container svg {
+  position: relative;
+  fill: #cecece;
+}
+
+.location-map-container svg #STATES {
+  position: relative;
+}
+
+.location-map-container svg #STATES .awarded {
+  fill: #39dc2a !important;
+}
+
+.location-map-container svg #STATES g {
+  outline: none;
+}
+
+.location-map-container svg #STATES polygon,
+.location-map-container svg #STATES polyline,
+.location-map-container svg #STATES path {
+  cursor: pointer;
+  -webkit-transition: 100ms ease;
+  transition: 100ms ease;
+  fill: inherit;
+}
+
+.location-map-container svg #LETTERS {
+  fill: #352e2e;
+}
+
+.location-map-container svg #LETTERS #DC circle {
+  fill: #ffb18f;
+}
+
+.location-map-container svg#WORLD {
+  position: relative;
+}
+
+.location-map-container svg#WORLD path {
+  stroke: white;
+}
+
+.location-map-container svg .state-tooltip {
+  position: absolute;
+}
+
+.location-map-container#world-map {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px dashed #d2d2d2;
+}
+
+.location-map-container#world-map .title {
+  text-align: center;
+}
+
+.map-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.map-legend-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.map-legend-container .map-key-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.map-legend-container .map-key-wrapper .color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.map-legend-container .map-key-wrapper #awarded {
+  background-color: #a4d1f2;
+}
+
+.map-legend-container .map-key-wrapper #target {
+  background-color: #ffb18f;
+}
+
+.map-legend-container .map-key-wrapper #empty {
+  background-color: #cecece;
+}
+
+#state-dropdowns {
+  padding: 0 10px;
+}
+
+#state-dropdowns h3 {
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 22px;
+  padding: 0 11px;
+  line-height: 1.3em;
+}
+
+#state-dropdowns .target-cities-dropdown-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: #222;
+}
+
+#state-dropdowns .target-cities-dropdown-container .target-city {
+  text-align: center;
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  min-width: 150px;
+  margin: 6px;
+  border: 3px solid #ffb18f;
+  border-radius: 4px;
+}
+
+#state-dropdowns .target-cities-dropdown-container .target-city .title-wrapper {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 6px;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+#state-dropdowns
+  .target-cities-dropdown-container
+  .target-city
+  .title-wrapper:after {
+  content: "+";
+  position: absolute;
+  top: -1px;
+  right: 5px;
+  font-weight: 300;
+}
+
+#state-dropdowns
+  .target-cities-dropdown-container
+  .target-city
+  .title-wrapper
+  h4 {
+  font-size: 13px;
+  text-align: left;
+  margin: 0;
+}
+
+#state-dropdowns .target-cities-dropdown-container .target-city .cities-list {
+  background-color: #ffffff;
+  padding: 5px 0;
+  display: none;
+}
+
+#state-dropdowns
+  .target-cities-dropdown-container
+  .target-city
+  .cities-list
+  .city {
+  font-size: 13px;
+  display: block;
+  margin: 7px 0;
+}
+
+#state-dropdowns .target-cities-dropdown-container .showing-cities {
+  background-color: #ffb18f;
+}
+
+#state-dropdowns
+  .target-cities-dropdown-container
+  .showing-cities
+  .title-wrapper {
+  background-color: #ffb18f;
+}
+
+#state-dropdowns
+  .target-cities-dropdown-container
+  .showing-cities
+  .title-wrapper:after {
+  content: "-" !important;
+}
+
+#state-dropdowns
+  .target-cities-dropdown-container
+  .showing-cities
+  .cities-list {
+  display: block !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .map-legend-container {
+    margin-left: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+}
